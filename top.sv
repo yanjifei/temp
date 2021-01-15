@@ -2,19 +2,19 @@
 //SCPM2 FPGA RTL top level 
 //jifei.yan@ncr.com
 
-`include "axis_intf.svh"
-`include "spi_intf.svh"
-`include "semc_intf.svh"
-`include "camera_cfg_intf.svh"
-`include "mitsubishi_intf.svh"
-`include "endorser_intf.svh"
-`include "stkbin_intf.svh"
-`include "sram_intf.svh"
-`include "sdram_intf.svh"
-`include "bram_intf.svh"
-`include "scpm2.svh"
+// `include "axis_intf.svh"
+// `include "spi_intf.svh"
+// `include "semc_intf.svh"
+// `include "camera_cfg_intf.svh"
+// `include "mitsubishi_intf.svh"
+// `include "endorser_intf.svh"
+// `include "stkbin_intf.svh"
+// `include "sram_intf.svh"
+// `include "sdram_intf.svh"
+// `include "bram_intf.svh"
+// `include "scpm2.svh"
 
-import scpm2::*;
+// import scpm2::*;
 
 
 module top (
