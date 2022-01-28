@@ -8,6 +8,7 @@ pipeline {
                 sh 'python3 --version'
                 sh 'python3 hello.py'
                 sh 'vlog top.sv'
+                sh 'conda activate py39'
                 sh 'make -C adder/tests/'
                 recordIssues(tools: [modelsim()])
             }
