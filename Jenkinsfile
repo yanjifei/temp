@@ -13,6 +13,12 @@ pipeline {
                 recordIssues(tools: [modelsim()])
             }
         }
+        stage('Unit Test') {
+          steps{
+            junit 'adder/tests/*.xml'
+          }
+        }
+
     }
 
     post {
@@ -21,10 +27,6 @@ pipeline {
             // archiveArtifacts artifacts: 'work_dir/**/output_files/*.sof', fingerprint: true, allowEmptyArchive: true
             // archiveArtifacts artifacts: 'work_dir/**/output_files/*.rbf', fingerprint: true, allowEmptyArchive: true
             junit 'adder/tests/*.xml'
-            xunit (
-                thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0') ],
-                tools: [ JUnit(pattern: 'adder/tests/*.xml') ]
-            )
         }
     }
 
