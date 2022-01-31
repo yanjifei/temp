@@ -9,13 +9,15 @@ pipeline {
                 sh 'python3 hello.py'
                 sh 'pip3 install cocotb'
                 sh 'vlog top.sv'
-                sh 'make -C adder/tests/'
                 recordIssues(tools: [modelsim()])
             }
         }
         stage('Unit Test') {
           steps{
+            sh 'make -C adder/tests/'
             junit 'adder/tests/*.xml'
+            sh 'make -C matrix_multiplier/tests/'
+            junit 'matrix_multiplier/tests/*.xml'
           }
         }
 
@@ -26,7 +28,7 @@ pipeline {
             // archiveArtifacts artifacts: 'work_dir/**/output_files/*.gz', fingerprint: true, allowEmptyArchive: true
             // archiveArtifacts artifacts: 'work_dir/**/output_files/*.sof', fingerprint: true, allowEmptyArchive: true
             // archiveArtifacts artifacts: 'work_dir/**/output_files/*.rbf', fingerprint: true, allowEmptyArchive: true
-            junit 'adder/tests/*.xml'
+            // junit 'adder/tests/*.xml'
         }
     }
 
