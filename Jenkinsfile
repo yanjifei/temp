@@ -18,6 +18,8 @@ pipeline {
             junit 'adder/tests/*.xml'
             sh 'make -C matrix_multiplier/tests/'
             junit 'matrix_multiplier/tests/*.xml'
+            sh 'make -C simple_dff/'
+            junit 'simple_dff/*.xml'
           }
         }
 
