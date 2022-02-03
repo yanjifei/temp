@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('checkout'){
+          steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '3f86cc1e-f2df-4525-93be-2b14a1457d99', url: 'https://github.com/yanjifei/temp']]])
+          }
+        }
         stage('build') {
             steps {
                 sh 'echo $LM_LICENSE_FILE'
