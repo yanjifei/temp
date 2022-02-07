@@ -1,7 +1,12 @@
 # How to set up a node for Jenkins server
 
+## What is a Jenkins Node?
+
+The definition is on Jenkins [website](https://www.jenkins.io/doc/book/glossary/#node). It is a machine that Jenkins can distribute its tasks to.
+
 ## Install SSH
 
+One way that Jenkins server talks to its nodes is through SSH.
 Please follow the [instructions](https://linuxhint.com/enable-ssh-linux-mint/) to install SSH server on the node.  
 
 ## Install Java
