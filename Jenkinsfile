@@ -12,13 +12,14 @@ pipeline {
         stage('Set up environment') {
             steps {
                 sh 'echo $LM_LICENSE_FILE'
-                sh 'echo $PATH'
+                sh 'echo ${env.PATH}'
                 // sh 'export PATH=/home/jay/intelFPGA_pro/21.2/questa_fe/bin/:$PATH'
                 // sh 'which vsim'
                 sh 'python3 --version'
                 sh 'python3 hello.py'
                 sh 'pip3 install wheel'
                 sh 'pip3 install cocotb'
+                sh 'export PATH=${env.PATH}'
                 sh 'cocotb-config --version'
                 // sh 'vlog top.sv'
                 // recordIssues(tools: [modelsim()])
