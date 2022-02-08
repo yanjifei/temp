@@ -20,7 +20,6 @@ pipeline {
                 sh 'python3 hello.py'
                 sh 'pip3 install wheel'
                 sh 'pip3 install cocotb'
-                sh 'export PATH=${env.PATH}'
                 sh 'cocotb-config --version'
                 // sh 'vlog top.sv'
                 // recordIssues(tools: [modelsim()])
