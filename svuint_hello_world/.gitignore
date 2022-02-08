@@ -1,0 +1,6 @@
+work/
+.__testsuite.sv
+.svunit.f
+.testrunner.sv
+*.log
+tests.xml
