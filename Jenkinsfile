@@ -2,6 +2,7 @@ pipeline {
     agent {label 'virtualbox_Jay_Desktop'}
     environment {
       PATH='~/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+      LM_LICENSE_FILE='~/license_files'
     }
     stages {
         // stage('checkout'){
@@ -12,7 +13,7 @@ pipeline {
         stage('Set up environment') {
             steps {
                 sh 'echo $LM_LICENSE_FILE'
-                sh 'echo ${env.PATH}'
+                echo ${env.PATH}
                 // sh 'export PATH=/home/jay/intelFPGA_pro/21.2/questa_fe/bin/:$PATH'
                 // sh 'which vsim'
                 sh 'python3 --version'
