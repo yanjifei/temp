@@ -1,5 +1,8 @@
 pipeline {
     agent {label 'virtualbox_Jay_Desktop'}
+    environment {
+      PATH='~/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+    }
     stages {
         // stage('checkout'){
         //   steps {
@@ -16,8 +19,6 @@ pipeline {
                 sh 'python3 hello.py'
                 sh 'pip3 install wheel'
                 sh 'pip3 install cocotb'
-                sh 'export PATH=~/.local/bin/:$PATH'
-                sh 'echo $PATH'
                 sh 'cocotb-config --version'
                 // sh 'vlog top.sv'
                 // recordIssues(tools: [modelsim()])
