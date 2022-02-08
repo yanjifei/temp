@@ -1,7 +1,7 @@
 pipeline {
     agent {label 'virtualbox_Jay_Desktop'}
     environment {
-      PATH='~/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
+      PATH='/home/jenkins/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games'
       LM_LICENSE_FILE='~/license_files'
     }
     stages {
