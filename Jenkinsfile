@@ -29,11 +29,11 @@ pipeline {
         }
         stage('Unit Test') {
           steps{
-            sh 'make -C adder/tests/'
+            sh 'make -C adder/tests/ clean && make -C adder/tests/'
             junit 'adder/tests/*.xml'
-            sh 'make -C matrix_multiplier/tests/'
+            sh 'make -C matrix_multiplier/tests/ clean && make -C matrix_multiplier/tests/'
             junit 'matrix_multiplier/tests/*.xml'
-            sh 'make -C simple_dff/'
+            sh 'make -C simple_dff/ clean && make -C simple_dff/'
             junit 'simple_dff/*.xml'
           }
         }
