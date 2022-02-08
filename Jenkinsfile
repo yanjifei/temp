@@ -6,7 +6,7 @@ pipeline {
         //     checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '3f86cc1e-f2df-4525-93be-2b14a1457d99', url: 'https://github.com/yanjifei/temp']]])
         //   }
         // }
-        stage('build') {
+        stage('Set up environment') {
             steps {
                 sh 'echo $LM_LICENSE_FILE'
                 sh 'echo $PATH'
@@ -16,7 +16,8 @@ pipeline {
                 sh 'python3 hello.py'
                 sh 'pip3 install wheel'
                 sh 'pip3 install cocotb'
-                sh 'vlog top.sv'
+                sh 'cocotb-config --version'
+                // sh 'vlog top.sv'
                 // recordIssues(tools: [modelsim()])
             }
         }
